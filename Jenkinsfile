@@ -6,10 +6,15 @@ pipeline{
         course="jenkins"
     }
     options {
-                timeout(time: 10, unit: 'SECONDS') 
+                // timeout(time: 10, unit: 'SECONDS') 
                 disableConcurrentBuilds()
                 retry(3)
-            }
+    }
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+    }
+
     stages{
         stage('build'){
             steps{
@@ -18,6 +23,7 @@ pipeline{
                     echo 'building....'
                     sleep 20
                     env
+                    echo "${params.PERSON}"
                     """
 
                 }
