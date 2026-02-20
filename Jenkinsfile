@@ -3,7 +3,7 @@ pipeline{
         label 'agent-1'
     }
     enironment{
-        course=jenkins
+        course="jenkins"
     }
     stages{
         stage('build'){
