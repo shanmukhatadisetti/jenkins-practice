@@ -2,7 +2,7 @@ pipeline{
     agent {
         label 'agent-1'
     }
-    enironment{
+    environment{
         course="jenkins"
     }
     stages{
